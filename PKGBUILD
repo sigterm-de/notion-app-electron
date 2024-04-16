@@ -10,7 +10,7 @@ arch=(amd64)
 url=https://www.notion.so/desktop
 license=(custom)
 depends=(
-	sh
+    bash
 	libgcc-s1
 	libc6
 	hicolor-icon-theme
