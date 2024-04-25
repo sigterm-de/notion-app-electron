@@ -22,7 +22,7 @@ The final application is called via `exec npx electron /usr/lib/notion-app $NOTI
 - leave the container
 
 ## install + run
-- `sudo dpkg -i notion-app-electron_3.4.2-1_amd64.deb`
+- `sudo dpkg -i notion-app-electron_3.5.0-1_amd64.deb`
 - run the application once in a terminal (`npx electron /usr/lib/notion-app`) to eventually install electron or see other error messages
 - There might be an error re:chrome-sandbox not owned by root
   fix it by
