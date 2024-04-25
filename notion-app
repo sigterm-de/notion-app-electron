@@ -7,5 +7,9 @@ if [[ -f $XDG_CONFIG_HOME/notion-flags.conf ]]; then
     NOTION_USER_FLAGS="$(grep -v '^#' $XDG_CONFIG_HOME/notion-flags.conf)"
 fi
 
-# Launch
+# load nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"
+
+# Launch via `nvm` managed `npx`
 exec npx electron@29 /usr/lib/notion-app $NOTION_USER_FLAGS "$@"
