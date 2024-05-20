@@ -15,15 +15,12 @@ Please note:
 The final application is called via `exec npx electron /usr/lib/notion-app $NOTION_USER_FLAGS "$@"` (see `notion-app`), thus you need to have `npx` installed. 
 
 ## build
-- `docker run -it -v ${PWD}:/tmp/notion ghcr.io/makedeb/makedeb-beta:ubuntu-latest`
-  - `cd /tmp/notion`
-  - `makedeb -s`
-- the build process should result in a Debian package, written to the mounted volume
-- leave the container
+- `docker build --output type=local,dest=. .`
+- the build process should result in a Debian package
 
 ## install + run
-- `sudo dpkg -i notion-app-electron_3.5.0-1_amd64.deb`
-- run the application once in a terminal (`npx electron /usr/lib/notion-app`) to eventually install electron or see other error messages
+- `sudo dpkg -i notion-app-electron_3.7.0-1_amd64.deb`
+- run the application once in a terminal (`npx electron@29 /usr/lib/notion-app`) to eventually install electron or see other error messages
 - There might be an error re:chrome-sandbox not owned by root
   fix it by
     `sudo chown root:root /home/daniel/.npm/_npx/1323dbbc85759269/node_modules/electron/dist/chrome-sandbox`
